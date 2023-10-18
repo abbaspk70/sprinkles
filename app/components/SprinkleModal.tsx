@@ -34,7 +34,7 @@ export default function SprinkleModal({showModal, setShowModal,items, setItems}:
   return (
     <div className="z-40">
       <div className="w-[300px] rounded-md overflow-hidden bg-secondary shadow-lg">
-        <div className="bg-tertiary text-white px-3 py-2">Title</div>
+        <div className="bg-tertiary text-white px-3 py-2">Add Circle</div>
         <div className="p-4">
             <label>Radius
             <input onChange={handleOnChange} onFocus={handleFocus} name="radius" type="number" placeholder="radius" value={values.radius}/>

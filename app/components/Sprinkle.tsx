@@ -11,11 +11,11 @@ export default function Sprinkle({radius, xValue, yValue}: TSprinkle) {
   const circle = radius * 2
   xValue = (xValue-radius);
   if (yValue >= radius) {
-    console.log("greater");
+    
     yPosition = 1000 - (yValue+radius);
   }
   if (yValue < radius) {
-    console.log("lesser");
+    
     yPosition = 1000 + (yValue-radius);
   }
   
