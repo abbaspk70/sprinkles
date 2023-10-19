@@ -27,7 +27,10 @@ export default function Square() {
       headers: {
         "content-type": "application/json",
       },
-    }).catch((e) => console.log(e));
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(e=>console.log(e));
     
     console.log("Circles:",circleData);
     console.log("Lines:",LineData); 
