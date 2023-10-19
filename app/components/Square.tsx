@@ -18,6 +18,23 @@ export default function Square() {
     lines.forEach((line:any)=>{
       LineData.push(line.props);
     })
+    // Post Data
+    fetch("https://route.softhem.net/api/v1/findroute", {
+      method: "POST",
+      body: JSON.stringify({
+        circleData,LineData
+      }),
+      headers: {
+        "content-type": "application/json",
+      },
+    }).catch((e) => console.log(e));
+
+
+
+
+
+
+
     console.log("Circles:",circleData);
     console.log("Lines:",LineData);    
   }
