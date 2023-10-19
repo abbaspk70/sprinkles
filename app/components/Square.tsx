@@ -35,6 +35,7 @@ export default function Square() {
         });
         const updateVal = [...lines, ...linesList];
         setLines(updateVal);
+        console.log(data);
       })
       .catch((e) => console.log(e));
 
