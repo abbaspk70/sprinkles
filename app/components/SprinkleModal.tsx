@@ -12,8 +12,8 @@ type TSprinkleModal = {
 export default function SprinkleModal({showModal, setShowModal,circles, setCircles}: TSprinkleModal) {
   const [values, setValues] = useState<TSprinkle>({
     radius: 0,
-    xValue: 0,
-    yValue: 0,
+    x: 0,
+    y: 0,
   });
   const handleOnChange = (e : ChangeEvent<HTMLInputElement>)=> {
     const name = e.target.name;
@@ -23,9 +23,9 @@ export default function SprinkleModal({showModal, setShowModal,circles, setCircl
   }
 
     const handleOk = ( ) => {
-      const updateValue = [...circles,<Sprinkle radius={values.radius} xValue={values.xValue} yValue={values.yValue} /> ]
+      const updateValue = [...circles,<Sprinkle radius={values.radius} x={values.x} y={values.y} /> ]
       setCircles(updateValue);
-      setValues({radius: 0, xValue: 0, yValue: 0});
+      setValues({radius: 0, x: 0, y: 0});
     };
     const handleFocus = (e: FocusEvent<HTMLInputElement, Element>)=> {
       e.target.select();
@@ -41,10 +41,10 @@ export default function SprinkleModal({showModal, setShowModal,circles, setCircl
             </label>
             <div className="flex gap-3 py-5">
               <label>Position X
-              <input className="" onChange={handleOnChange} onFocus={handleFocus} name="xValue" type="number"  placeholder="X" value={values.xValue}/>
+              <input className="" onChange={handleOnChange} onFocus={handleFocus} name="x" type="number"  placeholder="X" value={values.x}/>
               </label>
               <label>Position Y
-              <input className="" onChange={handleOnChange} onFocus={handleFocus} name="yValue" type="number"  placeholder="Y" value={values.yValue}/>
+              <input className="" onChange={handleOnChange} onFocus={handleFocus} name="y" type="number"  placeholder="Y" value={values.y}/>
               </label>
             </div>
           <div className="flex gap-3 justify-center text-secondary">
