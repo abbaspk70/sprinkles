@@ -22,16 +22,16 @@ export default function Square() {
     const res = await fetch("https://route.softhem.net/api/v1/findroute", {
       method: "POST",
       body: JSON.stringify({
-        circleData,LineData
+        circleData,
       }),
       headers: {
         "content-type": "application/json",
       },
     }).catch((e) => console.log(e));
-
+    
     console.log("Circles:",circleData);
     console.log("Lines:",LineData); 
-    console.log(res);   
+    console.log("Response", res);   
   }
   return (
     <div className="w-full flex justify-center items-center md:items-start gap-3 relative shrink-0 flex-col md:flex-row">
