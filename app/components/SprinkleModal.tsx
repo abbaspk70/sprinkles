@@ -5,11 +5,11 @@ import { TSprinkle } from "./Sprinkle";
 type TSprinkleModal = { 
   showModal: boolean,
   setShowModal: (arg0:boolean)=>void,
-  items: ReactNode[],
-  setItems: (arg0:ReactNode[])=>void
+  circles: ReactNode[],
+  setCircles: (arg0:ReactNode[])=>void
 }
 
-export default function SprinkleModal({showModal, setShowModal,items, setItems}: TSprinkleModal) {
+export default function SprinkleModal({showModal, setShowModal,circles, setCircles}: TSprinkleModal) {
   const [values, setValues] = useState<TSprinkle>({
     radius: 0,
     xValue: 0,
@@ -23,8 +23,8 @@ export default function SprinkleModal({showModal, setShowModal,items, setItems}:
   }
 
     const handleOk = ( ) => {
-      const updateValue = [...items,<Sprinkle radius={values.radius} xValue={values.xValue} yValue={values.yValue} /> ]
-      setItems(updateValue);
+      const updateValue = [...circles,<Sprinkle radius={values.radius} xValue={values.xValue} yValue={values.yValue} /> ]
+      setCircles(updateValue);
       setValues({radius: 0, xValue: 0, yValue: 0});
     };
     const handleFocus = (e: FocusEvent<HTMLInputElement, Element>)=> {

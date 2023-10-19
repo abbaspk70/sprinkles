@@ -7,8 +7,13 @@ import LineForm from "./LineForm";
 
 export default function Square() {
   const [showModal, setShowModal] = useState(true);
-  const [items, setItems] = useState<ReactNode[]>([]);
+  const [circles, setCircles] = useState<ReactNode[]>([]);
   const [lines, setLines] = useState<ReactNode[]>([]);
+  const handlePost = ()=> {
+    console.log("Circles:", circles);
+    console.log("Lines:", lines);
+    
+  }
   return (
     <div className="w-full flex justify-center items-center md:items-start gap-3 relative shrink-0 flex-col md:flex-row">
       <div className="flex flex-col gap-3">
@@ -16,8 +21,8 @@ export default function Square() {
         <SprinkleModal
         showModal={showModal}
         setShowModal={setShowModal}
-        items={items}
-        setItems={setItems}
+        circles={circles}
+        setCircles={setCircles}
         />
       </div>
       <div className="relative">
@@ -26,11 +31,12 @@ export default function Square() {
         setLines={setLines}
         />
       </div>
+      <button onClick={handlePost} className="w-full bg-primary text-tertiary py-2 rounded-md hover:bg-primary/90 hover:text-tertiary/90">Find Route</button>
       </div>
       <div className="w-[1000px] h-[1000px] bg-primary relative z-10 border-4 border-tertiary shrink-0">
       <div className="w-full h-full relative overflow-hidden">
-           {items.map((item, index) => {
-            return <Fragment key={index}>{item}</Fragment>;
+           {circles.map((circle, index) => {
+            return <Fragment key={index}>{circle}</Fragment>;
           })}
            {lines.map((line, index) => {
             return <Fragment key={index}>{line}</Fragment>;
