@@ -1,12 +1,12 @@
 import React from 'react'
 
 export type TLine = {
-  x1: number,
-  x2: number,
   y1: number,
   y2: number
 }
-export default function Line({x1,x2,y1, y2}: TLine) {
+export default function Line({y1, y2}: TLine) {
+    const x1 = 0;
+    const x2 = 1000;
     y1 = 996 - y1;
     y2 = 996 - y2;
     const distance: number = Math.sqrt( ((x1-x2)*(x1-x2)) + ((y1-y2)*(y1-y2)) );

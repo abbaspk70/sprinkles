@@ -8,8 +8,6 @@ type TLineForm = {
 }
 export default function LineForm({lines, setLines}: TLineForm) {
     const [values, setValues] = useState<TLine>({
-        x1: 0,
-        x2: 1000,
         y1: 0,
         y2: 0,
     });
@@ -21,7 +19,7 @@ export default function LineForm({lines, setLines}: TLineForm) {
       }
     
         const handleClick = () => {
-            const updateValue:  ReactNode[] = [...lines, <Line x1={values.x1} x2={values.x2} y1={values.y1} y2={values.y2}/>];
+            const updateValue:  ReactNode[] = [...lines, <Line y1={values.y1} y2={values.y2}/>];
             setLines(updateValue);
             setValues({...values, y1: 0 , y2: 0});          
         };

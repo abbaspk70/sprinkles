@@ -1,18 +1,25 @@
 "use client";
 import React, { Fragment, ReactNode, useState } from "react";
-import Sprinkle, { TSprinkle } from "./Sprinkle";
+import { TSprinkle } from "./Sprinkle";
 import SprinkleModal from "./SprinkleModal";
-import Line from "./Line";
 import LineForm from "./LineForm";
 
 export default function Square() {
   const [showModal, setShowModal] = useState(true);
   const [circles, setCircles] = useState<ReactNode[]>([]);
   const [lines, setLines] = useState<ReactNode[]>([]);
-  const handlePost = ()=> {
-    console.log("Circles:", circles);
-    console.log("Lines:", lines);
-    
+
+  const handlePost = async ()=> {
+    const circleData: TSprinkle[] = [];
+    circles.forEach((circle:any)=>{
+      circleData.push(circle.props);
+    })
+    const LineData: TSprinkle[] = [];
+    lines.forEach((line:any)=>{
+      LineData.push(line.props);
+    })
+    console.log("Circles:",circleData);
+    console.log("Lines:",LineData);    
   }
   return (
     <div className="w-full flex justify-center items-center md:items-start gap-3 relative shrink-0 flex-col md:flex-row">
