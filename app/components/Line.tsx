@@ -7,15 +7,15 @@ export type TLine = {
   y2: number
 }
 export default function Line({x1,x2,y1, y2}: TLine) {
-    y1 = 992 - y1;
-    y2 = 992 - y2;
+    y1 = 996 - y1;
+    y2 = 996 - y2;
     const distance: number = Math.sqrt( ((x1-x2)*(x1-x2)) + ((y1-y2)*(y1-y2)) );
     const xMid = (x1+x2)/2;
     const yMid = (y1+y2)/2;
     const salopeInRadian = Math.atan2( y1-y2, x1-x2 );
     const salopeInDegrees = (salopeInRadian * 180) /Math.PI;
   return (
-    <div style={{width: distance, top: yMid, left: xMid - (distance/2), transform: `rotate(${salopeInDegrees}deg)`}}  className={` bg-red-700 h-[10px] absolute top-1 z-40 w-[1000px]`}>
+    <div style={{width: distance, top: yMid, left: xMid - (distance/2), transform: `rotate(${salopeInDegrees}deg)`}}  className={` bg-red-700 h-[2px] absolute top-1 z-40 w-[1000px]`}>
 
     </div>
   )
