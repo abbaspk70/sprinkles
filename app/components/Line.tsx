@@ -7,8 +7,8 @@ export type TLine = {
   y2: number
 }
 export default function Line({x1,x2,y1, y2}: TLine) {
-    y1 = 1000 - y1;
-    y2 = 1000 - y2;
+    y1 = 992 - y1;
+    y2 = 992 - y2;
     const distance: number = Math.sqrt( ((x1-x2)*(x1-x2)) + ((y1-y2)*(y1-y2)) );
     const xMid = (x1+x2)/2;
     const yMid = (y1+y2)/2;

@@ -23,9 +23,7 @@ export default function LineForm({lines, setLines}: TLineForm) {
         const handleClick = () => {
             const updateValue:  ReactNode[] = [...lines, <Line x1={values.x1} x2={values.x2} y1={values.y1} y2={values.y2}/>];
             setLines(updateValue);
-            setValues({...values, y1: 0 , y2: 0});
-            console.log(lines);
-          
+            setValues({...values, y1: 0 , y2: 0});          
         };
         const handleFocus = (e: FocusEvent<HTMLInputElement, Element>)=> {
           e.target.select();
