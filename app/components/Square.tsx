@@ -20,7 +20,7 @@ export default function Square() {
       LineData.push(line.props);
     });
     // Post Data
-    const res: any = await fetch("https://sprinkles-opal.vercel.app/api/route", {
+    const res: any = await fetch("http://localhost:3000/api/route", {
       method: "POST",
       body: JSON.stringify(circleData),
       headers: {
