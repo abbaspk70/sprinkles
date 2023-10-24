@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 
 export type TSprinkle = {
   radius : number;
@@ -21,6 +20,7 @@ export default function Sprinkle({radius, x, y}: TSprinkle) {
   // }
   
   return (
-    <div style={{width: `${circle}px`, height: `${circle}px`, top: `${yPosition}px`, left: `${x}px`}}  className={`bg-secondary rounded-full absolute border-[1px] border-white`}></div>
+    <div style={{width: `${circle}px`, height: `${circle}px`, top: `${yPosition}px`, left: `${x}px`}}  className={`bg-secondary rounded-full absolute border-[1px] border-white`}>
+    </div>
   )
 }
