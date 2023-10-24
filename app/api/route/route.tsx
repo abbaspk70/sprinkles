@@ -21,7 +21,7 @@ export async function POST(request: Request) {
         if((circle.x + circle.radius) < 1000 && (circle.y + circle.radius) < 1000) {
             lines.push({y1:1000, y2:1000})
         }
-        if((circle.y + circle.radius ) >= 1000 && ((circle.x + circle.radius ) >= 1000)) {
+        if((circle.y + circle.radius ) >= 1000) {
            
             let y2 = (y-radius);
             let y1 = 1000;
